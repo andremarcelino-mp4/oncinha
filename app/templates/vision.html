@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Monitoramento IA{% endblock %}
+
+{% block content %}
+<header class="mb-10">
+    <p class="text-emerald-500 font-medium text-sm uppercase tracking-widest">Visão Computacional</p>
+    <h1 class="text-4xl font-bold mt-1">Monitoramento <span class="text-zinc-500 font-light">Real-Time</span></h1>
+</header>
+
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+    <div class="lg:col-span-3 bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden shadow-2xl">
+        <img src="{{ url_for('vision.video_stream') }}" class="w-full h-auto" alt="Feed da Câmera OunceAI">
+    </div>
+
+    <div class="space-y-6">
+        <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6">
+            <h3 class="text-lg font-bold mb-4 flex items-center gap-2"><i data-lucide="info" class="text-emerald-500"></i> Status do Modelo</h3>
+            <div class="space-y-4 text-sm">
+                <div class="flex justify-between border-b border-zinc-800 pb-2">
+                    <span class="text-zinc-500">Modelo</span>
+                    <span class="text-emerald-400 font-mono">YOLOv8 Small</span>
+                </div>
+                <div class="flex justify-between border-b border-zinc-800 pb-2">
+                    <span class="text-zinc-500">Confiança</span>
+                    <span class="text-emerald-400 font-mono">0.50</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

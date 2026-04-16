@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OunceAI | {% block title %}{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-sans antialiased">
+
+    <nav class="fixed top-0 left-0 h-full w-20 flex flex-col items-center py-8 bg-zinc-900 border-r border-zinc-800 gap-8 z-50">
+        <div class="text-emerald-500"><i data-lucide="zap" class="w-8 h-8"></i></div>
+        <a href="{{ url_for('inventory.dashboard') }}" class="text-zinc-500 hover:text-emerald-400 p-3 transition-all"><i data-lucide="layout-dashboard"></i></a>
+        <a href="/chat/gepeteco" class="text-zinc-500 hover:text-emerald-400 transition-colors"><i data-lucide="message-square"></i></a>
+        <a href="{{ url_for('vision.monitor') }}" class="text-zinc-500 hover:text-emerald-400 transition-colors"><i data-lucide="eye"></i></a>
+    </nav>
+
+    <main class="ml-20 p-8 lg:p-12">
+        {% block content %}{% endblock %}
+    </main>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
